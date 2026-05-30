@@ -99,9 +99,12 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hero-horse relative w-full aspect-square flex items-center justify-center">
-            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
-            <BulgarianHorse variant="hero" className="w-[120%] h-[120%] max-w-[600px] relative z-10 drop-shadow-[0_0_50px_rgba(0,102,255,0.3)]" />
+          <div className="hero-horse relative w-full flex items-center justify-center">
+            <div className="absolute inset-0 bg-primary/25 blur-[120px] rounded-full scale-75" />
+            <BulgarianHorse
+              variant="hero"
+              className="relative z-10 w-full max-w-[560px] object-contain drop-shadow-[0_0_60px_rgba(0,102,255,0.4)] select-none"
+            />
           </div>
         </div>
       </section>
@@ -160,7 +163,7 @@ export default function Home() {
       {/* SECTION 3: The Horse Has Spoken */}
       <section className="py-32 relative bg-[#020202] flex items-center justify-center overflow-hidden border-y border-border/50 reveal-section">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />
-        <BulgarianHorse variant="quote" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] z-0 opacity-10" />
+        <BulgarianHorse variant="approved" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] object-contain z-0 opacity-[0.07] select-none pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <h2 className="font-display text-6xl md:text-8xl lg:text-9xl mb-12 text-primary opacity-50 tracking-tighter">ATTENTION IS WAR.</h2>
@@ -213,8 +216,8 @@ export default function Home() {
               { title: 'Growth Systems', desc: 'Automated machines that scale you.' }
             ].map((service, i) => (
               <Link key={i} href="/services" className="group block bg-background border border-border p-8 rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,102,255,0.1)] hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
-                  <BulgarianHorse variant="service" className="w-16 h-16" />
+                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-80 transition-opacity duration-300">
+                  <BulgarianHorse variant="service" className="w-20 h-20 object-contain" />
                 </div>
                 <h3 className="font-display text-4xl mb-4 relative z-10">{service.title}</h3>
                 <p className="text-muted-foreground text-lg relative z-10">{service.desc}</p>

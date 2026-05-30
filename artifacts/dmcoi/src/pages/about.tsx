@@ -24,7 +24,7 @@ export default function About() {
           </div>
           <div className="bg-card border border-border rounded-2xl p-12 flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent opacity-50" />
-            <BulgarianHorse variant="hero" className="w-full max-w-[400px] relative z-10" />
+            <BulgarianHorse variant="working" className="w-full max-w-[420px] object-contain relative z-10 drop-shadow-[0_0_40px_rgba(0,102,255,0.3)] select-none" />
           </div>
         </div>
 
