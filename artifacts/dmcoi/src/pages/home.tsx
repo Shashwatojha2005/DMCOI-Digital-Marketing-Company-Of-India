@@ -1,11 +1,26 @@
 import React, { useRef } from 'react';
 import { Link } from 'wouter';
-import { Check, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck, ChevronRight, Star } from 'lucide-react';
 import { BulgarianHorse } from '@/components/BulgarianHorse';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+import logoChidiya from '@assets/chidiya-aai-dmcoi-client-social-media-marketing-united-states-_1780145527025.jpg';
+import logoCreadefy from '@assets/creadefy-dmcoi-client-social-media-marketing-united-states_1780145527025.jpg';
+import logoIoNet from '@assets/io.net-dmcoi-client_1780145527025.webp';
+import logoKikoo from '@assets/kikooai-dmcoi-client-social-media-marketing-united-states_1780145527026.jpg';
+import logoReworks from '@assets/reworks-social-media-markting-dmcoi_1780145527026.jpg';
+import logoSpheRon from '@assets/spheron-dmcoi_1780145527026.webp';
+import logoAirwaves from '@assets/taha-airwaves-dmcoi-client-social-media-marketing-australia-ca_1780145527027.jpg';
+import logoTuzhar from '@assets/tuzhar-perfumes-dmcoi-client-social-media-marketing-united-sta_1780145527027.jpg';
+import logoCurat from '@assets/curat.money-brand-dmcoi-client-social-media-marketing-australi_1780145527027.jpg';
+import logoAdsZenith from '@assets/ads-zenith-founder-of-adszenith-dmcoi-client-for-social-media-_1780145527027.png';
+
+import photoMadhur from '@assets/madhur-satija-curat-brand-dmcoi-client-social-media-marketing-_1780145527026.jpg';
+import photoPrakarsh from '@assets/prakarsh-pathak-taken-social-media-marketing-service-usa-austr_1780145527026.jpg';
+import photoSandeep from '@assets/sandeep-singh-founder-of-reworks.in-dmcoi-client-for-social-me_1780145527026.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,6 +125,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: Trusted By — Logo Marquee */}
+      <section className="py-12 border-y border-border bg-card overflow-hidden">
+        <div className="container mx-auto px-4 mb-6 text-center">
+          <p className="text-xs font-bold tracking-[0.3em] text-muted-foreground uppercase">TRUSTED BY FOUNDERS &amp; BRANDS ACROSS US · AU · CA</p>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-card to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-card to-transparent z-10" />
+          <div className="animate-marquee gap-10 px-4">
+            {[logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith,
+              logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith
+            ].map((logo, i) => (
+              <div key={i} className="flex-shrink-0 w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center p-2 overflow-hidden mx-2 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                <img src={logo} alt="client logo" className="w-full h-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: 7-Day Trial */}
       <section className="py-24 bg-card border-y border-border reveal-section relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -196,6 +231,85 @@ export default function Home() {
               <p className="text-muted-foreground font-bold uppercase tracking-wider text-sm">{kpi.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SECTION: Client Testimonials */}
+      <section className="py-24 bg-card border-y border-border reveal-section overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-3 rounded border border-primary/40 bg-primary/10 text-xs font-bold tracking-widest text-primary mb-4">REAL CLIENTS. REAL RESULTS.</span>
+            <h2 className="font-display text-5xl md:text-7xl">WHAT THEY SAY.</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            {[
+              {
+                photo: photoMadhur,
+                name: 'Madhur Satija',
+                company: 'Curat.',
+                role: 'Founder',
+                quote: 'DMCOI didn\'t just run our ads — they built an entire growth engine. Our brand visibility went from zero to recognised in under 60 days. The horse delivers.',
+              },
+              {
+                photo: photoPrakarsh,
+                name: 'Prakarsh Pathak',
+                company: 'io.net',
+                role: 'Growth Lead',
+                quote: 'What stood out was the speed. They were live with content and ads within 72 hours of onboarding. Most agencies spend 3 weeks in "strategy." DMCOI just executes.',
+              },
+              {
+                photo: photoSandeep,
+                name: 'Sandeep Singh',
+                company: 'Reworks.in',
+                role: 'Founder',
+                quote: 'The team handled our complete social media from graphics to ads. We saw a consistent flow of inbound leads. Worth every rupee — and then some.',
+              },
+            ].map((t, i) => (
+              <div key={i} className="bg-background border border-border rounded-2xl p-8 flex flex-col hover:border-primary/30 transition-colors duration-300 hover:shadow-[0_0_30px_rgba(0,102,255,0.07)]">
+                <div className="flex mb-3 gap-0.5">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground leading-relaxed text-base flex-1 mb-8 italic">"{t.quote}"</p>
+                <div className="flex items-center gap-4 pt-6 border-t border-border mt-auto">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-border shrink-0">
+                    <img src={t.photo} alt={t.name} className="w-full h-full object-cover object-top" />
+                  </div>
+                  <div>
+                    <p className="font-bold leading-tight">{t.name}</p>
+                    <p className="text-primary text-sm font-semibold">{t.company}</p>
+                    <p className="text-muted-foreground text-xs">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Logo wall below testimonials */}
+          <div className="border-t border-border pt-12">
+            <p className="text-center text-xs font-bold tracking-[0.3em] text-muted-foreground uppercase mb-8">ALSO TRUSTED BY</p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {[
+                { logo: logoChidiya, name: 'ChidiyaAI' },
+                { logo: logoCreadefy, name: 'Creadefy' },
+                { logo: logoIoNet, name: 'io.net' },
+                { logo: logoKikoo, name: 'KikooAI' },
+                { logo: logoSpheRon, name: 'Spheron' },
+                { logo: logoAirwaves, name: 'Airwaves' },
+                { logo: logoTuzhar, name: 'Tuzhar' },
+                { logo: logoAdsZenith, name: 'AdsZenith' },
+              ].map((c, i) => (
+                <div key={i} className="group flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-14 h-14 rounded-lg bg-card border border-border flex items-center justify-center p-1.5 overflow-hidden">
+                    <img src={c.logo} alt={c.name} className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-[10px] text-muted-foreground font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">{c.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
