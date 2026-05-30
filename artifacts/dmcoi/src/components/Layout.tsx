@@ -61,7 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bold">Connect</h3>
               <Link href="/contact" className="text-muted-foreground hover:text-primary text-sm transition-colors">Contact</Link>
               <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">LinkedIn</a>
-              <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Instagram</a>
+              <a href="https://www.instagram.com/dmcoi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm transition-colors">Instagram</a>
               <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Twitter</a>
             </div>
           </div>

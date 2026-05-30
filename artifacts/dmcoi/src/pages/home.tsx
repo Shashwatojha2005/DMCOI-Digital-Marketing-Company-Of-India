@@ -74,12 +74,13 @@ export default function Home() {
         
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center z-10">
           <div className="hero-text flex flex-col items-start max-w-2xl">
-            <span className="inline-block py-1 px-3 rounded border border-border bg-card text-xs font-bold tracking-widest text-primary mb-6">
-              THE BULGARIAN HORSE AGENCY
+            <span className="inline-block py-1 px-3 rounded border border-primary/40 bg-primary/10 text-xs font-bold tracking-widest text-primary mb-6 animate-pulse">
+              LIMITED TIME OFFER
             </span>
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-display leading-[0.85] tracking-tight mb-6">
-              RUN HARDER.<br />
-              <span className="text-primary">SCALE FASTER.</span>
+            <h1 className="text-7xl md:text-8xl lg:text-[5.5rem] font-display leading-[0.85] tracking-tight mb-6">
+              TRY DMCOI<br />
+              FOR 7 DAYS<br />
+              <span className="text-primary">ONLY $49.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
               DMCOI helps businesses generate more leads, dominate attention and grow faster through Meta Ads, Content Creation and Growth Systems.
@@ -88,9 +89,9 @@ export default function Home() {
               <Link href="/pricing" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-md font-bold flex items-center justify-center gap-2 text-lg hover:scale-105 transition-transform duration-200">
                 Start $49 Trial <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/contact" className="border border-border hover:border-primary/50 bg-card hover:bg-accent/10 px-8 py-4 rounded-md font-bold flex items-center justify-center text-lg transition-colors duration-200">
+              <a href="https://calendar.app.google/N9bU7euuWj3RUn5y9" target="_blank" rel="noopener noreferrer" className="border border-border hover:border-primary/50 bg-card hover:bg-accent/10 px-8 py-4 rounded-md font-bold flex items-center justify-center text-lg transition-colors duration-200">
                 Book Strategy Call
-              </Link>
+              </a>
             </div>
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-medium">
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> 5 Qualified Leads Guarantee</span>
@@ -361,9 +362,9 @@ export default function Home() {
             <Link href="/pricing" className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-5 rounded-md font-bold flex items-center justify-center text-xl hover:scale-105 transition-transform duration-200 w-full sm:w-auto">
               Start $49 Trial
             </Link>
-            <Link href="/contact" className="border-2 border-border hover:border-primary/50 bg-background hover:bg-accent/10 px-10 py-5 rounded-md font-bold flex items-center justify-center text-xl transition-colors duration-200 w-full sm:w-auto">
+            <a href="https://calendar.app.google/N9bU7euuWj3RUn5y9" target="_blank" rel="noopener noreferrer" className="border-2 border-border hover:border-primary/50 bg-background hover:bg-accent/10 px-10 py-5 rounded-md font-bold flex items-center justify-center text-xl transition-colors duration-200 w-full sm:w-auto">
               Book Strategy Call
-            </Link>
+            </a>
           </div>
         </div>
       </section>
