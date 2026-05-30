@@ -1,5 +1,9 @@
 import { Link } from 'wouter';
 import { BulgarianHorse } from '@/components/BulgarianHorse';
+import sachinPhoto from '@assets/dmcoi-founder-digital-marketing-company-of-india_1780145419196.png';
+import suryaanshPhoto from '@assets/digital-marketing-agency-USA-australia_1780145424301.jpeg';
+import shashwatPhoto from '@assets/social-media-marketing-agency-meta-ads-agency_1780145429084.jpeg';
+import shambhaviPhoto from '@assets/best-digital-marketing-agency-australia-usa-canada_1780145432736.jpeg';
 
 type HorseVariant = 'hero' | 'main' | 'approved' | 'presenting' | 'strategy' | 'service' | 'quote' | 'working';
 
@@ -10,8 +14,7 @@ interface TeamMember {
   bio: string;
   experience: string;
   horse: HorseVariant;
-  avatarInitials: string;
-  avatarColor: string;
+  photo: string;
 }
 
 const team: TeamMember[] = [
@@ -22,8 +25,7 @@ const team: TeamMember[] = [
     bio: 'Built DMCOI from the ground up after seeing how broken the agency world was. 5 years running profitable Meta Ads campaigns for businesses across AU, US and CA. If it doesn\'t convert, it doesn\'t ship.',
     experience: '5 Years Experience',
     horse: 'main',
-    avatarInitials: 'SC',
-    avatarColor: 'bg-primary',
+    photo: sachinPhoto,
   },
   {
     name: 'Suryaansh Pandey',
@@ -32,8 +34,7 @@ const team: TeamMember[] = [
     bio: 'Has guided the creation of 100+ videos and graphics that stop the scroll and start the sale. 7 years making brands look dangerous. Thinks in frames, breathes in conversions.',
     experience: '7 Years Experience',
     horse: 'working',
-    avatarInitials: 'SP',
-    avatarColor: 'bg-indigo-600',
+    photo: suryaanshPhoto,
   },
   {
     name: 'Shashwat Ojha',
@@ -42,8 +43,7 @@ const team: TeamMember[] = [
     bio: 'The strategist who builds growth systems with 100% brand accuracy. Every campaign he touches runs cleaner, faster, and harder. No guesswork — only systems that scale.',
     experience: 'Strategy Specialist',
     horse: 'presenting',
-    avatarInitials: 'SO',
-    avatarColor: 'bg-slate-700',
+    photo: shashwatPhoto,
   },
   {
     name: 'Shambhavi Thakur',
@@ -52,8 +52,7 @@ const team: TeamMember[] = [
     bio: '4 years dominating search rankings and designing assets that punch above their weight. Owns the intersection of visibility and aesthetics. Your brand on page one — built to last.',
     experience: '4 Years Experience',
     horse: 'strategy',
-    avatarInitials: 'ST',
-    avatarColor: 'bg-violet-700',
+    photo: shambhaviPhoto,
   },
 ];
 
@@ -81,21 +80,24 @@ export default function Team() {
           {team.map((member, i) => (
             <div
               key={i}
-              data-testid={`card-team-${i}`}
               className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,102,255,0.08)] relative overflow-hidden"
             >
-              {/* Background mascot */}
+              {/* Background mascot on hover */}
               <div className="absolute bottom-0 right-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
                 <BulgarianHorse variant={member.horse} className="w-40 object-contain select-none" />
               </div>
 
-              <div className="flex items-start gap-6 mb-6 relative z-10">
-                {/* Avatar */}
-                <div className={`w-16 h-16 rounded-full ${member.avatarColor} flex items-center justify-center shrink-0`}>
-                  <span className="font-display text-xl text-white">{member.avatarInitials}</span>
+              <div className="flex items-start gap-5 mb-6 relative z-10">
+                {/* Profile photo */}
+                <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-border group-hover:border-primary/50 transition-colors duration-300">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 {/* Name + role */}
-                <div>
+                <div className="pt-1">
                   <h3 className="font-display text-3xl leading-none mb-1">{member.name}</h3>
                   <p className="text-primary text-sm font-bold tracking-wider uppercase">{member.title} — {member.role}</p>
                   <p className="text-muted-foreground text-xs mt-1">{member.experience}</p>
@@ -104,7 +106,7 @@ export default function Team() {
 
               <p className="text-muted-foreground leading-relaxed relative z-10">{member.bio}</p>
 
-              {/* Small horse on hover (bottom-right corner visible area) */}
+              {/* Horse corner reveal */}
               <div className="flex justify-end mt-6 relative z-10">
                 <BulgarianHorse
                   variant={member.horse}
