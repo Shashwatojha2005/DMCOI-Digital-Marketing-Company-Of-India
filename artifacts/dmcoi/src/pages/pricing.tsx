@@ -32,14 +32,14 @@ const plans: Plan[] = [
       { text: '2 high-converting ad creatives' },
       { text: 'Audience research + targeting' },
       { text: 'Weekly performance report' },
-      { text: 'Ad spend optimization — daily' },
+      { text: 'Ad spend optimization, reviewed daily' },
     ],
     bonuses: [
       { label: 'Facebook + Instagram page audit', worth: '$200' },
       { label: 'Competitor ad analysis', worth: '$150' },
       { label: '1 custom ad graphic', worth: '$100' },
     ],
-    guarantee: 'If we don\'t generate minimum 5 qualified leads in Month 1 — Month 2 is completely FREE. Full team. Zero charge.',
+    guarantee: 'If we don\'t generate minimum 5 qualified leads in Month 1, Month 2 is completely FREE. Full team. Zero charge.',
     ctaLabel: 'Start Almost Zero',
   },
   {
@@ -111,7 +111,7 @@ export default function Pricing() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
         <div className="relative z-10">
           <span className="inline-block py-1 px-3 rounded border border-primary/40 bg-primary/10 text-xs font-bold tracking-widest text-primary mb-6">
-            NO CONTRACTS — CANCEL ANYTIME
+            NO CONTRACTS · CANCEL ANYTIME
           </span>
           <h1 className="font-display text-7xl md:text-9xl mb-6 leading-none">PICK YOUR<br/><span className="text-primary">LEVEL.</span></h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -182,7 +182,7 @@ export default function Pricing() {
 
                 <div className="mt-4 bg-primary/10 border border-primary/20 rounded px-3 py-2 text-center">
                   <span className="text-sm font-bold text-primary">TOTAL VALUE: {plan.totalValue}</span>
-                  <span className="text-muted-foreground text-sm"> — YOU PAY: <span className="font-bold text-foreground">${plan.price}/mo</span></span>
+                  <span className="text-muted-foreground text-sm"> · YOU PAY: <span className="font-bold text-foreground">${plan.price}/mo</span></span>
                 </div>
               </div>
 
@@ -289,8 +289,8 @@ export default function Pricing() {
             { q: 'Is ad spend included in the monthly fee?', a: 'No. The pricing above is our management and creative fee. You pay ad platforms (Meta/Google) directly. We recommend a minimum ad spend of $1,000/mo to see meaningful data and results.' },
             { q: 'What does the $49 trial actually get me?', a: 'The trial is a low-risk entry point. We build your initial Meta Ads campaign, edit one premium piece of video content, audit your current social setup, and run a strategy call with you. You keep all assets regardless.' },
             { q: 'Do I have to sign a 6-month contract?', a: 'Never. All plans are month-to-month. If we stop performing, you should be able to fire us. We rely on results for retention, not legal paperwork.' },
-            { q: 'Can I upgrade or downgrade my plan?', a: 'Yes. Change your plan at the end of any billing cycle with 7 days notice. Most clients upgrade — not downgrade.' },
-            { q: 'What counts as a "qualified lead"?', a: 'A qualified lead is a real person who has expressed interest in your product or service — a form fill, a call, a DM — that matches your ideal customer profile. Not just clicks or impressions.' },
+            { q: 'Can I upgrade or downgrade my plan?', a: 'Yes. Change your plan at the end of any billing cycle with 7 days notice. Most clients upgrade, not downgrade.' },
+            { q: 'What counts as a "qualified lead"?', a: 'A qualified lead is a real person who has expressed interest in your product or service (a form fill, a call, a DM) that matches your ideal customer profile. Not just clicks or impressions.' },
             { q: 'How quickly will I see results?', a: 'With paid ads, often within 48-72 hours of campaign launch. SEO and organic content compound over 30-90 days. Expect the first 7-14 days to be data-gathering, then performance accelerates.' },
           ].map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-border">

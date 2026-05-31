@@ -13,6 +13,7 @@ import Contact from "@/pages/contact";
 import Blog from "@/pages/blog";
 import Team from "@/pages/team";
 import Careers from "@/pages/careers";
+import Certificate from "@/pages/certificate";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/team" component={Team} />
         <Route path="/careers" component={Careers} />
+        <Route path="/certificate" component={Certificate} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -274,7 +274,7 @@ export default function Home() {
                 name: 'Madhur Satija',
                 company: 'Curat.',
                 role: 'Founder',
-                quote: 'DMCOI didn\'t just run our ads — they built an entire growth engine. Our brand visibility went from zero to recognised in under 60 days. The horse delivers.',
+                quote: 'DMCOI didn\'t just run our ads. They built an entire growth engine. Our brand visibility went from zero to recognised in under 60 days. The horse delivers.',
               },
               {
                 photo: photoPrakarsh,
@@ -288,7 +288,7 @@ export default function Home() {
                 name: 'Sandeep Singh',
                 company: 'Reworks.in',
                 role: 'Founder',
-                quote: 'The team handled our complete social media from graphics to ads. We saw a consistent flow of inbound leads. Worth every rupee — and then some.',
+                quote: 'The team handled our complete social media from graphics to ads. We saw a consistent flow of inbound leads. Worth every rupee, and then some.',
               },
             ].map((t, i) => (
               <div key={i} className="bg-background border border-border rounded-2xl p-8 flex flex-col hover:border-primary/30 transition-colors duration-300 hover:shadow-[0_0_30px_rgba(0,102,255,0.07)]">

@@ -49,7 +49,7 @@ interface ClientResult {
 
 const clients: ClientResult[] = [
   {
-    client: 'Jexx — YouTube Growth',
+    client: 'Jexx: YouTube Growth',
     category: 'Content & Growth',
     period: 'May 2026 (28 days)',
     stats: [
@@ -251,7 +251,6 @@ function ClientCard({ client }: { client: ClientResult }) {
   );
 }
 
-/* Centered portrait embed — overflows its container to hide Drive player chrome */
 function DriveVideoEmbed({ src, title }: { src: string; title: string }) {
   return (
     <div className="relative bg-black rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '9 / 16' }}>
@@ -262,11 +261,10 @@ function DriveVideoEmbed({ src, title }: { src: string; title: string }) {
         allowFullScreen
         style={{
           position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: '120%',
-          height: '120%',
-          transform: 'translate(-50%, -50%)',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
           border: 'none',
         }}
       />
@@ -283,7 +281,7 @@ export default function Work() {
           <div className="text-sm font-bold tracking-widest text-primary uppercase mb-4">Real Clients. Real Numbers.</div>
           <h1 className="font-display text-7xl md:text-9xl mb-6">THE SCOREBOARD</h1>
           <p className="text-xl text-muted-foreground">
-            No stock photos. No made-up case studies. These are actual dashboards from actual client accounts — Meta Ads Manager, YouTube Studio, Google Search Console.
+            No stock photos. No invented case studies. Actual dashboards from actual client accounts: Meta Ads Manager, YouTube Studio, Google Search Console.
           </p>
         </div>
 
@@ -294,7 +292,7 @@ export default function Work() {
         <div className="mt-10">
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
             <div className="p-8 border-b border-border">
-              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Screen Recordings — Last 28 Days</div>
+              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Screen Recordings / Last 28 Days</div>
               <h2 className="font-display text-3xl md:text-4xl">Instagram Growth Proof</h2>
               <p className="text-muted-foreground mt-1">Real-time screen recordings showing follower growth, reach, and engagement analytics.</p>
             </div>
@@ -321,7 +319,7 @@ export default function Work() {
             <div className="p-8 border-b border-border">
               <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Video Editing & Content Creation</div>
               <h2 className="font-display text-3xl md:text-4xl">Scroll-Stopping Content</h2>
-              <p className="text-muted-foreground mt-1">Videos we create for clients — built for maximum retention, shares, and conversions.</p>
+              <p className="text-muted-foreground mt-1">Videos we create for clients, built for maximum retention, shares, and conversions.</p>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-items-center">

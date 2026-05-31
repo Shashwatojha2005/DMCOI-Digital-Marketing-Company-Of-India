@@ -40,7 +40,7 @@ const team: TeamMember[] = [
     name: 'Shashwat Ojha',
     title: 'Operations Manager',
     role: 'Social Media Specialist',
-    bio: 'The strategist who builds growth systems with 100% brand accuracy. Every campaign he touches runs cleaner, faster, and harder. No guesswork — only systems that scale.',
+    bio: 'The strategist who builds growth systems with 100% brand accuracy. Every campaign he touches runs cleaner, faster, and harder. No guesswork. Only systems that scale.',
     experience: 'Strategy Specialist',
     horse: 'presenting',
     photo: shashwatPhoto,
@@ -49,7 +49,7 @@ const team: TeamMember[] = [
     name: 'Shambhavi Thakur',
     title: 'SEO Expert',
     role: 'Graphic Designer',
-    bio: '4 years dominating search rankings and designing assets that punch above their weight. Owns the intersection of visibility and aesthetics. Your brand on page one — built to last.',
+    bio: '4 years dominating search rankings and designing assets that punch above their weight. Owns the intersection of visibility and aesthetics. Your brand on page one, built to last.',
     experience: '4 Years Experience',
     horse: 'strategy',
     photo: shambhaviPhoto,
@@ -99,7 +99,7 @@ export default function Team() {
                 {/* Name + role */}
                 <div className="pt-1">
                   <h3 className="font-display text-3xl leading-none mb-1">{member.name}</h3>
-                  <p className="text-primary text-sm font-bold tracking-wider uppercase">{member.title} — {member.role}</p>
+                  <p className="text-primary text-sm font-bold tracking-wider uppercase">{member.title} · {member.role}</p>
                   <p className="text-muted-foreground text-xs mt-1">{member.experience}</p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function Team() {
             <div className="bg-card border border-primary/30 rounded-xl p-8 shadow-[0_0_30px_rgba(0,102,255,0.1)]">
               <BulgarianHorse variant="working" className="w-20 h-20 object-contain mx-auto mb-4 select-none" />
               <h4 className="font-display text-2xl mb-2 text-primary">WE BUILD</h4>
-              <p className="text-muted-foreground text-sm">We execute daily — ads, content, SEO, systems. No excuses. No waiting for "next sprint."</p>
+              <p className="text-muted-foreground text-sm">We execute daily: ads, content, SEO, systems. No excuses. No waiting for "next sprint."</p>
             </div>
             <div className="bg-card border border-border rounded-xl p-8">
               <BulgarianHorse variant="presenting" className="w-20 h-20 object-contain mx-auto mb-4 select-none" />

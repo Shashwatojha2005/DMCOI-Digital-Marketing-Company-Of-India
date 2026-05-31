@@ -44,7 +44,7 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block py-1 px-3 rounded border border-primary/40 bg-primary/10 text-xs font-bold tracking-widest text-primary mb-6">
-            FREE STRATEGY CALL — NO OBLIGATION
+            FREE STRATEGY CALL · NO OBLIGATION
           </span>
           <h1 className="font-display text-6xl md:text-8xl mb-4 leading-none">BOOK YOUR<br/><span className="text-primary">STRATEGY CALL</span></h1>
           <p className="text-xl text-muted-foreground">Stop guessing. Let's build a machine that prints pipeline.</p>
@@ -128,7 +128,7 @@ export default function Contact() {
               <BulgarianHorse variant="strategy" className="w-24 mx-auto object-contain mb-4 select-none" />
               <p className="font-display text-xl mb-2">THE HORSE IS THINKING.</p>
               <p className="text-sm text-muted-foreground">
-                While you fill in the form, we're already building your strategy. Fast response — within 24 hours.
+                While you fill in the form, we're already building your strategy. Fast response within 24 hours.
               </p>
             </div>
           </div>
