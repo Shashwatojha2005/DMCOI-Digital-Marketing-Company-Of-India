@@ -145,6 +145,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: Aggregate Proof Strip */}
+      <section className="py-10 border-b border-border bg-background reveal-section">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border border border-border rounded-2xl overflow-hidden">
+            {[
+              { value: '₹20L+', label: 'Revenue Generated', sub: 'Across Meta Ads clients' },
+              { value: '5.35x', label: 'Avg Meta ROAS', sub: 'Across all campaigns' },
+              { value: '17.4K', label: 'YouTube Views', sub: 'In 28 days, one channel' },
+              { value: '124K+', label: 'Instagram Reach', sub: '99.5% non-follower audience' },
+            ].map((stat, i) => (
+              <div key={i} className="p-8 flex flex-col items-center text-center bg-card hover:bg-card/80 transition-colors">
+                <div className="font-display text-4xl md:text-5xl text-primary leading-none mb-2">{stat.value}</div>
+                <div className="font-bold text-sm uppercase tracking-wider mb-1">{stat.label}</div>
+                <div className="text-xs text-muted-foreground">{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link href="/work" className="text-xs text-muted-foreground hover:text-primary transition-colors font-medium tracking-wide">
+              See full proof with screenshots and dashboards →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: 7-Day Trial */}
       <section className="py-24 bg-card border-y border-border reveal-section relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />

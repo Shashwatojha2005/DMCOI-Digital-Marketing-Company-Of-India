@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, ExternalLink, ChevronLeft, ChevronRight, X, Play } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Link } from 'wouter';
 
 import img_yt_channel from '@assets/dmcoi-brisbane-logan-best-affordable-social-media-marketing-ag_1780200203807.png';
@@ -21,7 +21,8 @@ const DRIVE_LINK = 'https://drive.google.com/drive/folders/1LKrpxDJj5Lv6p_2yXOxa
 const CONTENT_DRIVE_LINK = 'https://drive.google.com/drive/folders/18rKADsfp5RWQM9RBuapQuaMKbK_kqEjz?usp=drive_link';
 const CALENDAR_LINK = 'https://calendar.app.google/N9bU7euuWj3RUn5y9';
 
-const driveEmbed = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
+const driveEmbed = (id: string) => `https://drive.google.com/file/d/${id}/preview?rm=minimal`;
+const driveImg = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
 
 const INSTA_GROWTH_VIDEOS = [
   driveEmbed('1-cUm3DNyp-TdpfTnWNuq79cnSCkkfJ2G'),
@@ -43,6 +44,7 @@ interface ClientResult {
   stats: { label: string; value: string }[];
   images: string[];
   period?: string;
+  portraitImages?: boolean;
 }
 
 const clients: ClientResult[] = [
@@ -56,7 +58,7 @@ const clients: ClientResult[] = [
       { label: 'New Subscribers', value: '+469' },
       { label: 'Growth vs Prior', value: '+999%' },
     ],
-    images: [img_yt_channel, img_yt_video],
+    images: [img_yt_channel, img_yt_video, driveImg('11qp9GapNvpEUpvPocO6R0yziw4jyv8ox')],
   },
   {
     client: 'Instagram Reels Client',
@@ -68,7 +70,13 @@ const clients: ClientResult[] = [
       { label: 'Reach Growth', value: '+26,036%' },
       { label: 'Non-follower Reach', value: '99.5%' },
     ],
-    images: [img_instagram_views],
+    images: [
+      img_instagram_views,
+      driveImg('1LIK0auD1Tiy9emRlwXe3_ZoS5R6ThRWN'),
+      driveImg('1K8xMja1Knq-PulovbFhKC8zH8k9x_n6w'),
+      driveImg('1a2slfNa008JvCRP7v6xVFnUXhTUaVUMM'),
+    ],
+    portraitImages: true,
   },
   {
     client: 'Ikaanya Web',
@@ -159,6 +167,7 @@ function ClientCard({ client }: { client: ClientResult }) {
 
   const primary = client.images[0];
   const extras = client.images.slice(1);
+  const isPortrait = client.portraitImages;
 
   return (
     <>
@@ -182,48 +191,84 @@ function ClientCard({ client }: { client: ClientResult }) {
         </div>
 
         <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <button onClick={() => openLightbox(0)} className="relative overflow-hidden rounded-xl group cursor-zoom-in">
-              <img src={primary} alt={`${client.client} result`} className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-bold text-sm bg-black/60 px-3 py-1.5 rounded-full">View Full</span>
-              </div>
-            </button>
+          {isPortrait ? (
+            /* Portrait gallery: horizontal scroll of tall cards */
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {client.images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => openLightbox(i)}
+                  className="relative overflow-hidden rounded-xl group cursor-zoom-in bg-zinc-900"
+                >
+                  <img
+                    src={img}
+                    alt={`${client.client} result ${i + 1}`}
+                    className="w-full h-64 object-contain object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-bold text-xs bg-black/60 px-2 py-1 rounded-full">View</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          ) : (
+            /* Landscape gallery */
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <button onClick={() => openLightbox(0)} className="relative overflow-hidden rounded-xl group cursor-zoom-in bg-zinc-900">
+                <img
+                  src={primary}
+                  alt={`${client.client} result`}
+                  className="w-full h-64 object-contain object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-bold text-sm bg-black/60 px-3 py-1.5 rounded-full">View Full</span>
+                </div>
+              </button>
 
-            {extras.length > 0 && (
-              <div className={`grid gap-3 ${extras.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-                {extras.slice(0, 3).map((img, i) => (
-                  <button key={i} onClick={() => openLightbox(i + 1)} className="relative overflow-hidden rounded-xl group cursor-zoom-in">
-                    <img
-                      src={img}
-                      alt={`${client.client} result ${i + 2}`}
-                      className={`w-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ${extras.length === 1 ? 'h-64' : 'h-[120px]'}`}
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                      {i === 2 && extras.length > 3 && (
-                        <span className="font-bold text-white text-lg bg-black/70 px-3 py-1.5 rounded-full">+{extras.length - 3} more</span>
-                      )}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+              {extras.length > 0 && (
+                <div className={`grid gap-3 ${extras.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                  {extras.slice(0, 3).map((img, i) => (
+                    <button key={i} onClick={() => openLightbox(i + 1)} className="relative overflow-hidden rounded-xl group cursor-zoom-in bg-zinc-900">
+                      <img
+                        src={img}
+                        alt={`${client.client} result ${i + 2}`}
+                        className={`w-full object-contain object-top group-hover:scale-105 transition-transform duration-500 ${extras.length === 1 ? 'h-64' : 'h-[120px]'}`}
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                        {i === 2 && extras.length > 3 && (
+                          <span className="font-bold text-white text-lg bg-black/70 px-3 py-1.5 rounded-full">+{extras.length - 3} more</span>
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>
   );
 }
 
-function DriveVideoEmbed({ src, title, portrait = false }: { src: string; title: string; portrait?: boolean }) {
+/* Centered portrait embed — overflows its container to hide Drive player chrome */
+function DriveVideoEmbed({ src, title }: { src: string; title: string }) {
   return (
-    <div className={`relative bg-black rounded-xl overflow-hidden border border-border group ${portrait ? 'aspect-[9/16]' : 'aspect-video'}`}>
+    <div className="relative bg-black rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '9 / 16' }}>
       <iframe
         src={src}
         title={title}
         allow="autoplay"
-        className="absolute inset-0 w-full h-full"
         allowFullScreen
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '120%',
+          height: '120%',
+          transform: 'translate(-50%, -50%)',
+          border: 'none',
+        }}
       />
     </div>
   );
@@ -242,49 +287,69 @@ export default function Work() {
           </p>
         </div>
 
-        {/* Client Result Cards */}
-        <div className="flex flex-col gap-10">
-          {clients.map((client, i) => (
+        {/* 1. Jexx YouTube Growth */}
+        <ClientCard client={clients[0]} />
+
+        {/* 2. Instagram Growth — Video Proof (right after Jexx) */}
+        <div className="mt-10">
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="p-8 border-b border-border">
+              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Screen Recordings — Last 28 Days</div>
+              <h2 className="font-display text-3xl md:text-4xl">Instagram Growth Proof</h2>
+              <p className="text-muted-foreground mt-1">Real-time screen recordings showing follower growth, reach, and engagement analytics.</p>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 justify-items-center">
+                {INSTA_GROWTH_VIDEOS.map((src, i) => (
+                  <div key={i} className="w-full max-w-xs">
+                    <DriveVideoEmbed src={src} title={`Instagram Growth Proof ${i + 1}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Instagram Reels Client data card */}
+        <div className="mt-10">
+          <ClientCard client={clients[1]} />
+        </div>
+
+        {/* 4. Scroll-Stopping Content (right after Instagram section) */}
+        <div className="mt-10">
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="p-8 border-b border-border">
+              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Video Editing & Content Creation</div>
+              <h2 className="font-display text-3xl md:text-4xl">Scroll-Stopping Content</h2>
+              <p className="text-muted-foreground mt-1">Videos we create for clients — built for maximum retention, shares, and conversions.</p>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-items-center">
+                {CONTENT_VIDEOS.map((src, i) => (
+                  <div key={i} className="w-full">
+                    <DriveVideoEmbed src={src} title={`Content Creation Sample ${i + 1}`} />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <a
+                  href={CONTENT_DRIVE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-primary/40 text-primary font-bold px-7 py-3.5 rounded-lg hover:bg-primary/10 transition-colors text-sm uppercase tracking-wider"
+                >
+                  See More Videos <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 5–8. Remaining Meta Ads + SEO clients */}
+        <div className="flex flex-col gap-10 mt-10">
+          {clients.slice(2).map((client, i) => (
             <ClientCard key={i} client={client} />
           ))}
-        </div>
-
-        {/* Instagram Growth — Video Proof */}
-        <div className="mt-20">
-          <div className="mb-10">
-            <div className="text-xs font-bold tracking-widest text-primary uppercase mb-3">Screen Recordings — Last 28 Days</div>
-            <h2 className="font-display text-4xl md:text-6xl mb-3">INSTAGRAM GROWTH PROOF</h2>
-            <p className="text-muted-foreground text-lg">Real-time screen recordings showing follower growth, reach, and engagement analytics for our content clients.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {INSTA_GROWTH_VIDEOS.map((src, i) => (
-              <DriveVideoEmbed key={i} src={src} title={`Instagram Growth Proof ${i + 1}`} portrait />
-            ))}
-          </div>
-        </div>
-
-        {/* Content Creation Portfolio */}
-        <div className="mt-20">
-          <div className="mb-10">
-            <div className="text-xs font-bold tracking-widest text-primary uppercase mb-3">Video Editing & Content Creation</div>
-            <h2 className="font-display text-4xl md:text-6xl mb-3">SCROLL-STOPPING CONTENT</h2>
-            <p className="text-muted-foreground text-lg">These are the videos we create for clients — built for maximum retention, shares, and conversions.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {CONTENT_VIDEOS.map((src, i) => (
-              <DriveVideoEmbed key={i} src={src} title={`Content Creation Sample ${i + 1}`} portrait />
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <a
-              href={CONTENT_DRIVE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-primary/40 text-primary font-bold px-7 py-3.5 rounded-lg hover:bg-primary/10 transition-colors text-sm uppercase tracking-wider"
-            >
-              See More Videos <ExternalLink className="w-4 h-4" />
-            </a>
-          </div>
         </div>
 
         {/* Full Proof Folder */}
