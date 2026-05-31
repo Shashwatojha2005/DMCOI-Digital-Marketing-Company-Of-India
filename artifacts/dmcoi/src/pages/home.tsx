@@ -345,32 +345,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6: Featured Work */}
+      {/* SECTION 6: Real Results — Jexx YT Highlight + Meta Ads */}
       <section className="py-24 reveal-section container mx-auto px-4">
-        <h2 className="font-display text-5xl md:text-7xl mb-16 text-center">THE SCOREBOARD.</h2>
-        
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-16">
+          <h2 className="font-display text-5xl md:text-7xl">THE SCOREBOARD.</h2>
+          <Link href="/work" className="inline-flex items-center gap-2 text-primary font-bold hover:text-primary/80 transition-colors mb-1">
+            See Full Portfolio <ChevronRight className="w-5 h-5" />
+          </Link>
+        </div>
+
+        {/* Jexx YouTube — Featured highlight */}
+        <div className="bg-card border border-primary/30 rounded-2xl overflow-hidden mb-8 hover:border-primary/60 transition-colors duration-300 shadow-[0_0_40px_rgba(0,102,255,0.07)]">
+          <div className="grid lg:grid-cols-2 gap-0">
+            <div className="p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-border">
+              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-3">Content & Growth · YouTube</div>
+              <h3 className="font-display text-4xl md:text-5xl mb-6">JEXX YOUTUBE CHANNEL</h3>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">From near-zero to a thriving channel in 28 days. DMCOI handled full content strategy, video editing, and growth systems.</p>
+              <Link href="/work" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                See Full Breakdown <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 divide-x divide-y divide-border">
+              {[
+                { value: '17.4K', label: 'Views in 28 Days' },
+                { value: '+469', label: 'New Subscribers' },
+                { value: '779.5h', label: 'Watch Time' },
+                { value: '+999%', label: 'Growth vs Prior Period' },
+              ].map((stat, i) => (
+                <div key={i} className="p-8 flex flex-col justify-center">
+                  <div className="font-display text-4xl md:text-5xl text-primary leading-none mb-2">{stat.value}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Meta Ads results */}
+        <div className="grid lg:grid-cols-2 gap-6">
           {[
-            { client: 'Sydney HVAC', result: '245%', metric: 'ROAS Increase', tag: 'Meta Ads' },
-            { client: 'Elite Coaching', result: '12k', metric: 'New Followers in 30 days', tag: 'Content' },
-            { client: 'Local Med Clinic', result: '3x', metric: 'Bookings Volume', tag: 'Funnels' }
+            { client: 'Ikaanya Web', tag: 'Meta Ads', result: '2.59x', metric: 'Average ROAS', sub: '280 purchases · ₹7.22L revenue' },
+            { client: 'Path Pavers', tag: 'Meta Ads', result: '8.30x', metric: 'Average ROAS', sub: '116 purchases · ₹7.63L revenue' },
           ].map((study, i) => (
-            <div key={i} className="bg-card border border-border rounded-xl p-8 flex flex-col relative overflow-hidden group">
+            <div key={i} className="bg-card border border-border rounded-xl p-8 flex flex-col relative overflow-hidden group hover:border-primary/40 transition-colors duration-300">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] group-hover:bg-primary/20 transition-colors" />
               <span className="text-xs font-bold tracking-widest text-primary mb-8">{study.tag}</span>
-              <div className="font-display text-6xl mb-2 group-hover:text-primary transition-colors">{study.result}</div>
-              <p className="text-xl font-bold mb-8">{study.metric}</p>
-              <div className="mt-auto pt-8 border-t border-border flex items-center justify-between">
+              <div className="font-display text-6xl md:text-7xl mb-1 group-hover:text-primary transition-colors">{study.result}</div>
+              <p className="text-xl font-bold mb-2">{study.metric}</p>
+              <p className="text-muted-foreground text-sm mb-8">{study.sub}</p>
+              <div className="mt-auto pt-6 border-t border-border flex items-center justify-between">
                 <span className="text-muted-foreground font-medium">{study.client}</span>
                 <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <Link href="/work" className="inline-flex border-b-2 border-primary pb-1 font-bold text-lg hover:text-primary transition-colors">
-            See More Case Studies
-          </Link>
+      </section>
+
+      {/* SECTION: Proof in Motion — Content Creation Videos */}
+      <section className="py-24 bg-card border-y border-border reveal-section">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <div>
+              <div className="text-xs font-bold tracking-widest text-primary uppercase mb-3">Video Editing · Content Creation</div>
+              <h2 className="font-display text-5xl md:text-7xl">PROOF IN MOTION.</h2>
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/18rKADsfp5RWQM9RBuapQuaMKbK_kqEjz?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 border border-primary/40 text-primary font-bold px-5 py-2.5 rounded-lg hover:bg-primary/10 transition-colors text-sm uppercase tracking-wider mb-1"
+            >
+              See All Videos <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              'https://drive.google.com/file/d/1m39uyjVJhNrPpJfO87z9PA3TAkCERP7n/preview',
+              'https://drive.google.com/file/d/1QFAgg6XDb-h46Prf82R25TSlXeJxR1LM/preview',
+              'https://drive.google.com/file/d/1I0aCrHV6n_K84dV8E6f5ZQ3yiwfQqQTW/preview',
+            ].map((src, i) => (
+              <div key={i} className="relative bg-black rounded-xl overflow-hidden border border-border aspect-[9/16]">
+                <iframe
+                  src={src}
+                  title={`Content sample ${i + 1}`}
+                  allow="autoplay"
+                  className="absolute inset-0 w-full h-full"
+                  allowFullScreen
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
