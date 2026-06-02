@@ -91,34 +91,61 @@ export default function Contact() {
           <div className="lg:col-span-2 space-y-6">
             <div className="bg-card border border-border rounded-xl p-8">
               <h3 className="font-display text-3xl mb-6">DIRECT COMMS</h3>
-              <div className="space-y-6">
-                <a
-                  href="mailto:hello@dmcoi.com"
-                  data-testid="link-email"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <div className="bg-background p-3 rounded-full border border-border">
-                    <Mail className="w-6 h-6" />
+              <div className="space-y-5">
+                {/* WhatsApp */}
+                <div>
+                  <p className="text-xs font-bold tracking-widest text-primary uppercase mb-3">WhatsApp</p>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://wa.me/919219924376"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <div className="bg-background p-2.5 rounded-full border border-border shrink-0">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <span className="font-medium">+91 92199 24376</span>
+                    </a>
+                    <a
+                      href="https://wa.me/917704037350"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <div className="bg-background p-2.5 rounded-full border border-border shrink-0">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <span className="font-medium">+91 77040 37350</span>
+                    </a>
                   </div>
-                  <span className="text-lg font-medium">hello@dmcoi.com</span>
-                </a>
-                <a
-                  href="https://wa.me/61400000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-whatsapp"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <div className="bg-background p-3 rounded-full border border-border">
-                    <Phone className="w-6 h-6" />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <p className="text-xs font-bold tracking-widest text-primary uppercase mb-3">Email</p>
+                  <div className="flex flex-col gap-3">
+                    {['support@dmcoi.com', 'contact@dmcoi.com', 'sales@dmcoi.com'].map((email) => (
+                      <a
+                        key={email}
+                        href={`mailto:${email}`}
+                        className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <div className="bg-background p-2.5 rounded-full border border-border shrink-0">
+                          <Mail className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium text-sm">{email}</span>
+                      </a>
+                    ))}
                   </div>
-                  <span className="text-lg font-medium">WhatsApp Us</span>
-                </a>
-                <div className="flex items-center gap-4 text-muted-foreground">
-                  <div className="bg-background p-3 rounded-full border border-border">
-                    <MapPin className="w-6 h-6" />
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center gap-4 text-muted-foreground pt-1 border-t border-border">
+                  <div className="bg-background p-2.5 rounded-full border border-border shrink-0">
+                    <MapPin className="w-5 h-5" />
                   </div>
-                  <span className="text-lg font-medium">AU · US · CA</span>
+                  <span className="font-medium">India · AU · US · CA</span>
                 </div>
               </div>
             </div>

@@ -137,8 +137,8 @@ export default function Home() {
             {[logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith,
               logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith
             ].map((logo, i) => (
-              <div key={i} className="flex-shrink-0 w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center p-2 overflow-hidden mx-2 opacity-60 hover:opacity-90 transition-opacity duration-300">
-                <img src={logo} alt="client logo" className="w-full h-full object-contain" style={{ filter: 'grayscale(1) brightness(2.8) contrast(0.85)' }} />
+              <div key={i} className="flex-shrink-0 w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center p-2 overflow-hidden mx-2 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                <img src={logo} alt="client logo" className="w-full h-full object-contain" />
               </div>
             ))}
           </div>
@@ -222,17 +222,55 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: The Horse Has Spoken */}
-      <section className="py-32 relative bg-[#020202] flex items-center justify-center overflow-hidden border-y border-border/50 reveal-section">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none" />
-        <BulgarianHorse variant="approved" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] object-contain z-0 opacity-[0.07] select-none pointer-events-none" />
-        
-        <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-          <h2 className="font-display text-6xl md:text-8xl lg:text-9xl mb-12 text-primary opacity-50 tracking-tighter">ATTENTION IS WAR.</h2>
-          <blockquote className="font-display text-4xl md:text-6xl lg:text-7xl leading-none mb-12 tracking-tight">
-            "We don't do marketing.<br/>
-            We do damage."
-          </blockquote>
-          <p className="text-primary font-bold tracking-widest text-lg">— THE BULGARIAN HORSE</p>
+      {/* SECTION: 10.34x ROAS Result */}
+      <section className="py-24 relative bg-[#020202] overflow-hidden border-y border-border/50 reveal-section">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/8 via-background to-background pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 rounded border border-primary/40 bg-primary/10 text-xs font-bold tracking-widest text-primary mb-4">LIVE CLIENT RESULT</span>
+            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl leading-none">
+              <span className="text-primary">10.34x</span> ROAS.<br/>
+              <span className="text-muted-foreground text-3xl md:text-4xl font-display tracking-wide">Real ad spend. Real returns.</span>
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            {/* Result image */}
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-[0_0_60px_rgba(0,102,255,0.15)] group">
+              <img
+                src={`https://drive.google.com/thumbnail?id=1BD7af08Hl9XyyuKdHwflMCzsyNkJ7KnO&sz=w1200`}
+                alt="10.34x ROAS Meta Ads Result - DMCOI"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                <span className="bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase">Meta Ads Dashboard</span>
+              </div>
+            </div>
+
+            {/* Stats breakdown */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 transition-colors">
+                <div className="font-display text-5xl text-primary mb-1">10.34x</div>
+                <div className="font-bold text-sm uppercase tracking-widest text-muted-foreground">Return on Ad Spend</div>
+                <p className="text-sm text-muted-foreground mt-2">Every ₹1 invested returned ₹10.34 in revenue. Verified from Meta Ads Manager.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 transition-colors">
+                <div className="font-display text-5xl text-primary mb-1">₹20L+</div>
+                <div className="font-bold text-sm uppercase tracking-widest text-muted-foreground">Revenue Generated</div>
+                <p className="text-sm text-muted-foreground mt-2">Across active Meta Ads campaigns run and managed by DMCOI.</p>
+              </div>
+              <a
+                href="https://calendar.app.google/N9bU7euuWj3RUn5y9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-200 text-sm uppercase tracking-wider"
+              >
+                Get Results Like This
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -328,7 +366,7 @@ export default function Home() {
               ].map((c, i) => (
                 <div key={i} className="group flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-lg bg-card border border-border flex items-center justify-center p-1.5 overflow-hidden">
-                    <img src={c.logo} alt={c.name} className="w-full h-full object-contain" style={{ filter: 'grayscale(1) brightness(2.8) contrast(0.85)' }} />
+                    <img src={c.logo} alt={c.name} className="w-full h-full object-contain" />
                   </div>
                   <span className="text-[10px] text-muted-foreground font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">{c.name}</span>
                 </div>
