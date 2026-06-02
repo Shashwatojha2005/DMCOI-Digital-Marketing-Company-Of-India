@@ -137,8 +137,8 @@ export default function Home() {
             {[logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith,
               logoChidiya, logoCreadefy, logoIoNet, logoKikoo, logoReworks, logoSpheRon, logoAirwaves, logoTuzhar, logoCurat, logoAdsZenith
             ].map((logo, i) => (
-              <div key={i} className="flex-shrink-0 w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center p-2 overflow-hidden mx-2 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                <img src={logo} alt="client logo" className="w-full h-full object-contain" />
+              <div key={i} className="flex-shrink-0 w-20 h-20 rounded-xl bg-background border border-border flex items-center justify-center p-2 overflow-hidden mx-2 opacity-60 hover:opacity-90 transition-opacity duration-300">
+                <img src={logo} alt="client logo" className="w-full h-full object-contain" style={{ filter: 'grayscale(1) brightness(2.8) contrast(0.85)' }} />
               </div>
             ))}
           </div>
@@ -328,7 +328,7 @@ export default function Home() {
               ].map((c, i) => (
                 <div key={i} className="group flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-lg bg-card border border-border flex items-center justify-center p-1.5 overflow-hidden">
-                    <img src={c.logo} alt={c.name} className="w-full h-full object-contain" />
+                    <img src={c.logo} alt={c.name} className="w-full h-full object-contain" style={{ filter: 'grayscale(1) brightness(2.8) contrast(0.85)' }} />
                   </div>
                   <span className="text-[10px] text-muted-foreground font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">{c.name}</span>
                 </div>

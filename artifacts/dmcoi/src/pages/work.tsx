@@ -253,7 +253,10 @@ function ClientCard({ client }: { client: ClientResult }) {
 
 function DriveVideoEmbed({ src, title }: { src: string; title: string }) {
   return (
-    <div className="relative bg-black rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '9 / 16' }}>
+    <div
+      className="relative bg-black rounded-xl overflow-hidden border border-border"
+      style={{ paddingBottom: '177.78%', height: 0 }}
+    >
       <iframe
         src={src}
         title={title}
@@ -266,6 +269,7 @@ function DriveVideoEmbed({ src, title }: { src: string; title: string }) {
           width: '100%',
           height: '100%',
           border: 'none',
+          display: 'block',
         }}
       />
     </div>

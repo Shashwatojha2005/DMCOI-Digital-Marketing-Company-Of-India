@@ -196,7 +196,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/work" className="text-muted-foreground hover:text-primary text-sm transition-colors">Work</Link>
               <Link href="/about" className="text-muted-foreground hover:text-primary text-sm transition-colors">About</Link>
               <Link href="/team" className="text-muted-foreground hover:text-primary text-sm transition-colors">Team</Link>
-              <Link href="/certificate" className="text-muted-foreground hover:text-primary text-sm transition-colors">Certificates</Link>
+              <Link href="/careers" className="text-muted-foreground hover:text-primary text-sm transition-colors">Careers</Link>
             </div>
             
             <div className="flex flex-col gap-4">

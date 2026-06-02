@@ -1,0 +1,85 @@
+# DMCOI Website UI Refinement Task
+
+IMPORTANT: Do not redesign the website. Do not change the layout, structure, spacing, sections, navigation, content hierarchy, animations, loading speed, responsiveness, or existing branding.
+
+The goal is to improve visual consistency and premium perception while preserving the current design.
+
+## Change 1: Upgrade CTA Buttons
+
+Current issue:
+The primary CTA buttons use a flat solid blue color and feel slightly basic compared to the overall premium dark theme.
+
+Requirements:
+
+* Replace the solid blue CTA buttons with a premium blue gradient.
+* Use a gradient that fits DMCOI's black and electric-blue identity.
+* Do NOT use rainbow, neon, crypto, gaming, or overly flashy gradients.
+* Add a subtle top highlight to create depth.
+* Add a very soft glow/shadow effect.
+* Maintain excellent readability and contrast.
+* Keep button sizes, spacing, and positioning unchanged.
+* Keep hover states smooth and professional.
+* The final look should feel modern, premium, and high-converting.
+
+Reference style:
+Inspired by Spheron's premium CTA treatment, but adapted to DMCOI's branding.
+
+---
+
+## Change 2: Client Logos Visual Consistency
+
+Current issue:
+Client logos have different colors, brightness levels, and visual weights, creating inconsistency within the dark premium design.
+
+Requirements:
+
+* Keep the existing logo section layout exactly as it is.
+* Do NOT change logo positions.
+* Do NOT change spacing.
+* Do NOT change card sizes.
+* Do NOT change the overall structure of the section.
+
+Only improve the visual treatment of the logos.
+
+Implementation:
+
+* Convert all logos to a premium monochrome style.
+* Use light gray / off-white tones that work with the dark background.
+* Optionally use a very subtle blue-tinted white if it fits the design.
+* Normalize brightness and contrast across all logos.
+* Ensure all logos have a similar visual weight.
+* Preserve recognizability of each brand.
+* Keep the section elegant, minimal, and enterprise-grade.
+
+Goal:
+Create a unified, premium "Trusted By" section similar to high-end SaaS and technology companies.
+
+---
+
+## Change 3: Team Member Photo Update
+
+Requirements:
+
+* Replace the current image of Shashwat Ojha with the new provided image.
+* Match the styling of other team member photos.
+* Maintain consistent crop ratio.
+* Maintain consistent image sizing.
+* Maintain consistent visual presentation across the team section.
+
+Do not modify the layout of the team section.
+
+---
+
+## Design Rules
+
+* Preserve existing dark theme.
+* Preserve existing electric-blue brand identity.
+* Preserve mascot branding.
+* Preserve hero section structure.
+* Preserve website performance and loading speed.
+* Preserve responsiveness across desktop, tablet, and mobile.
+* Do not introduce unnecessary effects.
+* Focus only on premium refinement and consistency.
+
+Expected outcome:
+A more premium, cohesive, enterprise-quality website with stronger visual consistency while keeping the current DMCOI brand and layout intact.

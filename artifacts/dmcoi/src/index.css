@@ -353,6 +353,24 @@
   }
 }
 
+/* ─── Premium Gradient CTA Buttons ──────────────────────── */
+
+/* Override all solid-primary buttons with a premium blue gradient */
+.bg-primary.text-primary-foreground,
+a.bg-primary,
+button.bg-primary {
+  background: linear-gradient(135deg, #004FCC 0%, #0062F5 55%, #2277FF 100%) !important;
+  box-shadow: 0 4px 18px rgba(0, 98, 245, 0.38), inset 0 1px 0 rgba(255,255,255,0.14) !important;
+  border: none !important;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+.bg-primary.text-primary-foreground:hover,
+a.bg-primary:hover,
+button.bg-primary:hover {
+  background: linear-gradient(135deg, #0047B8 0%, #0059E0 55%, #1A6BF0 100%) !important;
+  box-shadow: 0 6px 28px rgba(0, 98, 245, 0.55), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
 /* ─── Premium Animations ─────────────────────────────────── */
 
 @keyframes fadeInUp {

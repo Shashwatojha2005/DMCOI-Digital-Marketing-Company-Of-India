@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { BulgarianHorse } from '@/components/BulgarianHorse';
 import sachinPhoto from '@assets/dmcoi-founder-digital-marketing-company-of-india_1780145419196.png';
 import suryaanshPhoto from '@assets/digital-marketing-agency-USA-australia_1780145424301.jpeg';
-import shashwatPhoto from '@assets/social-media-marketing-agency-meta-ads-agency_1780145429084.jpeg';
+import shashwatPhoto from '@assets/WhatsApp_Image_2026-06-02_at_11.26.45_AM_1780379974785.jpeg';
 import shambhaviPhoto from '@assets/best-digital-marketing-agency-australia-usa-canada_1780145432736.jpeg';
 
 type HorseVariant = 'hero' | 'main' | 'approved' | 'presenting' | 'strategy' | 'service' | 'quote' | 'working';
